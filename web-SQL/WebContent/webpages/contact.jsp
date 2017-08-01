@@ -13,7 +13,7 @@
 <div id = header>
 
 <div id= logo>
-<a href="http://localhost:8080/web-noSQL/webpages/index.jsp"><img src=Sample_photos/logo/main_logo.jpg></a>
+<a href="http://localhost:8080/web-SQL/webpages/index.jsp"><img src= "Sample_photos/logo/main_logo.JPG"></a>
 <div id = Quote>
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <p>Buy or sell anything at a price that suits you</p>
@@ -30,7 +30,7 @@
 </div>
 <div id= microphone_op>
 <form action="/action_page.php">
-  <input type="image" src="C:/Users/Lenovo/Desktop/web-site-mongo/web-noSQL/WebContent/webpages/Sample_photos/buttons/microphone.jpg" width="30" height="30"alt="Speech_navigation">
+  <input type="image" src="Sample_photos/buttons/microphone.jpg" width="30" height="30"alt="Speech_navigation">
 </form>
 </div>
 </div>
@@ -60,8 +60,8 @@
 </div>
 
 <div id= web_links>
-<a href="http://www.facebook.com"><img src=Sample_photos/facebook.jpg width="50" height="50"></a>
-<a href="http://www.twitter.com"><img src=Sample_photos/twitter.jpg width="50" height="50"></a>
+<a href="http://www.facebook.com"><img src=Sample_photos/icons/facebook.jpg width="50" height="50"></a>
+<a href="http://www.twitter.com"><img src=Sample_photos/icons/twitter.jpg width="50" height="50"></a>
 </div>
 </body>
 </html>

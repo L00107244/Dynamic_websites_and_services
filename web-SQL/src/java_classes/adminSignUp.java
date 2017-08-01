@@ -52,7 +52,7 @@ public class adminSignUp
   {
 	  this.password = passIn;
   }
-  private int getID()
+  public int getID()
   {
 	  return id;
   }
@@ -106,7 +106,15 @@ public class adminSignUp
 	  }
 	   return AllAdmins; 
 	}
+  public int updateAdmin(int IDNoIn, String usernamein, String passwordin)   
+  {
+      int status = 0;
+      String sqlString="update admin set username=\'"+usernamein+"',password = '"+passwordin+"\' where id="+IDNoIn;
+      status = databaseUpdate(sqlString);                                            
+      return status;
 
+    
+   }
 public static int databaseUpdate(String sqlUpdate)
   {
 		int status = 0;

@@ -14,7 +14,7 @@
 <div id = header>
 
 <div id= logo>
-<a href="http://localhost:8080/web-noSQL/webpages/index.jsp"><img src=Sample_photos/logo/main_logo.jpg></a>
+<a href="http://localhost:8080/web-SQL/webpages/index.jsp"><img src= "Sample_photos/logo/main_logo.JPG"></a>
 <div id = Quote>
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <p>Buy or sell anything at a price that suits you</p>
@@ -31,46 +31,56 @@
 </div>
 <div id= microphone_op>
 <form action="/action_page.php">
-  <input type="image" src="C:/Users/Lenovo/Desktop/web-site-mongo/web-noSQL/WebContent/webpages/Sample_photos/buttons/microphone.jpg" width="30" height="30"alt="Speech_navigation">
+  <input type="image" src= "Sample_photos/buttons/microphone.jpg"width="30" height="30"alt="Speech_navigation">
 </form>
 </div>
 </div>
+<div class= login>
 <div id= heading>
-<h2>Admin Sign-up</h2>
-<p>Create a new admin account here</p>
+<h2>Sign-up Admin</h2>
+<p>Please enter the details of the new administrator below</p>
         <form method="post" action="" name="form2" id="my_sign-up_form">
           <ol>
             <li>
-              <label for="first-name">Username</label>
-              <input type="text" name="username">
+              <label for="username">username</label>
+              <input type="text" name="un">
             </li>
             <li>
-              <label for="Name">Name</label>
+              <label for="aname">Name</label>
               <input type="text" name="name">
             </li>
              <li>
-              <label for="address">Password</label>
-              <input type="password" name="password">
+              <label for="password">Password</label>
+              <input type="password" name="pass">
             </li>
             <li>
               <input class="submit" type="submit" name="Submit" value="submit">
             </li>
           </ol>
-          <p>Already have an account? Login <a href='login.jsp'>here</a>.</p>  
-     <%
-     if(request.getParameter("Submit")!=null)
-     {
-    	 String user = request.getParameter("username");
-    	 String name = request.getParameter("name");
-    	 String pass = request.getParameter("password");
-    	 adminSignUp addRec = new adminSignUp(user, name, pass);
-    	 int addStatus = adminSignUp.add(addRec);
-    	 if(addStatus==1)
-    	 {
-    		 System.out.println("record add to database");
-    	 }
-     }
-   %>
+          <p>Already have an account? Login <a href='login.jsp'>here</a>.</p>          
+       
+   <%
+   
+   if (request.getParameter("Submit") != null) {
+
+		String username = request.getParameter("un");
+		String name = request.getParameter("name");
+        String password = request.getParameter("pass");
+	
+		adminSignUp addTest = new adminSignUp(username, name, password);
+		int addStatus1 = adminSignUp.add(addTest);
+		if(addStatus1==1) 
+		{
+			response.sendRedirect("login.jsp");
+		}
+   }
+			
+		%> 
+		 </form>
+		</div>
+</div>
+
+
 <div class = footer>
 <div id= contact>
 <h5> Contact</h5>
@@ -80,8 +90,8 @@
 </div>
 
 <div id= web_links>
-<a href="http://www.facebook.com"><img src=Sample_photos/facebook.jpg width="50" height="50"></a>
-<a href="http://www.twitter.com"><img src=Sample_photos/twitter.jpg width="50" height="50"></a>
+<a href="http://www.facebook.com"><img src=Sample_photos/icons/facebook.jpg width="50" height="50"></a>
+<a href="http://www.twitter.com"><img src=Sample_photos/icons/twitter.jpg width="50" height="50"></a>
 </div>
 </body>
 </html>

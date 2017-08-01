@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="java_classes.adminSignUp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ page import="java_classes.adminSignUp" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java_classes.sign_up_backend" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -33,14 +31,14 @@
 </div>
 <div id= microphone_op>
 <form action="/action_page.php">
-  <input type="image" src="Sample_photos/buttons/microphone.jpg" width="30" height="30"alt="Speech_navigation">
+  <input type="image" src= "Sample_photos/buttons/microphone.jpg"width="30" height="30"alt="Speech_navigation">
 </form>
 </div>
 </div>
 <div class= login>
 <div id= heading>
-<h2>Login</h2>
-<p>Please sign into your account. Don't have an account? why don't you sign up</p>
+<h2>Update your records</h2>
+<p>Please fill out the boxes to update the information</p>
         <form method="post" action="" name="form2" id="my_sign-up_form">
           <ol>
             <li>
@@ -48,37 +46,28 @@
               <input type="text" name="username">
             </li>
              <li>
-              <label for="address">Password</label>
+              <label for="password">Password</label>
               <input type="password" name="password">
             </li>
             <li>
-              <input class="submit" type="submit" name="Login" value="Login">
+              <input class="submit" type="submit" name="submit" value="submit">
             </li>
           </ol>
-          <p>Dont have an account? sign up <a href='sign-up.jsp'>here</a>.</p> 
+          <p>To go back to the home page click here <a href='adminPage.jsp'>here</a>.</p> 
          <%
-         if(request.getParameter("Login")!= null)
+         if(request.getParameter("submit")!= null)
          {
-        	 String username = request.getParameter("username");
-        	 String password = request.getParameter("password");
-        	 adminSignUp adminlog = new adminSignUp();
-        	 ArrayList<adminSignUp> ars = new ArrayList<adminSignUp>();
-        	 ars = adminSignUp.viewAllAdmins();
-        	 sign_up_backend signin = new sign_up_backend();
-        	 ArrayList<sign_up_backend> sub = new ArrayList<sign_up_backend>();
-        	 sub = sign_up_backend.viewAllUsers();
-    
-        		 if(username.equals(adminlog.getUsername())&& password.equals(adminlog.getPassword()))
-        		 {
-        			 adminSignUp.ConnectedAdmin=adminlog;
-        			 response.sendRedirect("adminPage.jsp");
-        		 }
-        		 else if(username.equals(signin.getusername())&& password.equals(signin.getpassword()))
-        		 {
-        			 
-        			 response.sendRedirect("userpage.jsp");
-        		 }
-        	 
+        	String user = request.getParameter("username");
+        	String pass = request.getParameter("password");
+        	adminSignUp update = new adminSignUp();
+        	int ID = update.getID();
+        	int updateRec = 0;
+        	updateRec = update.updateAdmin(ID, user, pass);
+        	if(updateRec==1)
+        	{
+        		System.out.println("Record updated");
+        	}
+
          }
          %>
 

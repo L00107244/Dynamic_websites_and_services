@@ -13,7 +13,7 @@
 <div id = header>
 
 <div id= logo>
-<a href="http://localhost:8080/web-noSQL/webpages/index.jsp"><img src=Sample_photos/logo/main_logo.jpg></a>
+<a href="http://localhost:8080/web-SQL/webpages/index.jsp"><img src= "Sample_photos/logo/main_logo.JPG"></a>
 <div id = Quote>
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <p>Buy or sell anything at a price that suits you</p>
@@ -28,7 +28,7 @@
 </div>
 <div id= microphone_op>
 <form action="/action_page.php">
-  <input type="image" src="C:/Users/Lenovo/Desktop/web-site-mongo/web-noSQL/WebContent/webpages/Sample_photos/buttons/microphone.jpg" width="30" height="30"alt="Speech_navigation">
+  <input type="image" src="Sample_photos/buttons/microphone.jpg" width="30" height="30"alt="Speech_navigation">
 </form>
 </div>
 
@@ -37,17 +37,17 @@
 </div>
 <div class = Top_Categories>
 <div id= top_cat1>
-<img  src=Sample_photos/House_Category/henery.jpg width="100%" height="300">
+<img  src= "Sample_photos/menu_options/1235.jpg" width="100%" height="300">
 <div id= link1>
-<a href='to_buy.jsp'><span>click to browse</span></a>
+<a href='to_buy.jsp'><span>click to browse Messages</span></a>
 </div>
 
 </div>
 <div id= top_cat2>
-<img src=Sample_photos/Motor_category/a6.jpg width="100%" height="300">
+<img src="Sample_photos/menu_options/1233.jpg" width="100%" height="300">
 
 <div id= link2>
-<a href='to_buy.jsp'><span>click to browse</span></a>
+<a href='UpdateAdminRecord.jsp'><span>click to update your info</span></a>
 </div>
 </div>
 <div id=heading>
@@ -55,10 +55,10 @@
 </div>
 <div id= top_cat3>
 <div class = tech_category>
-<img  src=Sample_photos/tech_category/ps4.jpg width="100%" height="300">
+<img  src= "Sample_photos/menu_options/1232.jpg" width="100%" height="300">
 
 <div id= link3>
-<a href='to_buy.jsp'><span>click to browse</span></a>
+<a href='adminSignUp.jsp'><span>click to add a new Admin</span></a>
 </div>
 </div>
 
@@ -66,11 +66,11 @@
 </div>
 <div id= top_cat4>
 <div class=animal_images>
-  <img src=Sample_photos/animal_category/Puppy_2_kbhb4a.jpg width="100%" height="300">
+  <img src="Sample_photos/menu_options/1231.jpg" width="100%" height="300">
 
 </div>
 <div id= link4>
-<a href='to_buy.jsp'><span>click to browse</span></a>
+<a href='to_buy.jsp'><span>click for site maintainance</span></a>
 </div>
 </div>
 </div>
@@ -85,8 +85,8 @@
 </div>
 
 <div id= web_links>
-<a href="http://www.facebook.com"><img src=Sample_photos/facebook.jpg width="50" height="50"></a>
-<a href="http://www.twitter.com"><img src=Sample_photos/twitter.jpg width="50" height="50"></a>
+<a href="http://www.facebook.com"><img src=Sample_photos/icons/facebook.jpg width="50" height="50"></a>
+<a href="http://www.twitter.com"><img src=Sample_photos/icons/twitter.jpg width="50" height="50"></a>
 </div>
 </body>
 </html>
