@@ -1,0 +1,12 @@
+127.0.0.1 - - [04/Aug/2017:11:09:29 +0100] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:11:09:32 +0100] "GET /web-SQL/webpages/login.jsp HTTP/1.1" 200 2335
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:11:09:32 +0100] "GET /web-SQL/webpages/bbr.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:11:10:02 +0100] "POST /web-SQL/webpages/login.jsp HTTP/1.1" 200 2335
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:11:10:27 +0100] "POST /web-SQL/webpages/login.jsp HTTP/1.1" 500 2885
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:11:11:08 +0100] "GET /web-SQL/webpages/login.jsp HTTP/1.1" 200 2335
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:11:11:08 +0100] "GET /web-SQL/webpages/bbr.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:11:11:09 +0100] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:11:12:00 +0100] "POST /web-SQL/webpages/login.jsp HTTP/1.1" 200 2335
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:11:12:37 +0100] "POST /web-SQL/webpages/login.jsp HTTP/1.1" 200 2335
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:12:08:45 +0100] "GET /web-SQL/webpages/to_buy.jsp HTTP/1.1" 200 2303
+0:0:0:0:0:0:0:1 - - [04/Aug/2017:12:08:45 +0100] "GET /web-SQL/webpages/Sample_photos/buttons/microphone.jpg HTTP/1.1" 304 -
