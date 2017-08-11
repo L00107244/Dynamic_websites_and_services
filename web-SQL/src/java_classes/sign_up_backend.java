@@ -173,28 +173,4 @@ public class sign_up_backend
 		}
 		return status;
 	}
-	  public static void main(String []args)
-	  {
-		
-	    Scanner keyIn = new Scanner(System.in);
-
-		
-		System.out.println("Userername: ");
-		String user=keyIn.nextLine();
-		System.out.println("Password: ");
-		String pass=keyIn.nextLine();
-		ArrayList<sign_up_backend> ars= new ArrayList<sign_up_backend>();
-		ars=sign_up_backend.viewAllUsers();
-		System.out.println(ars);
-		for(sign_up_backend s:ars){
-			if(user.equals(s.getusername())&& pass.equals(s.getpassword()))
-		    {
-				
-				sign_up_backend.ConnectedUser=s;
-		    	System.out.println("connected");
-
-		    }
-
-		}
-	  }
 }

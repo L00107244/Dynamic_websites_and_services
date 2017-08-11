@@ -50,6 +50,10 @@
               <input type="text" name="name">
             </li>
              <li>
+              <label for="department">Department</label>
+              <input type="text" name="Depart">
+            </li>
+             <li>
               <label for="password">Password</label>
               <input type="password" name="pass">
             </li>
@@ -65,9 +69,10 @@
 
 		String username = request.getParameter("un");
 		String name = request.getParameter("name");
+		String department = request.getParameter("Depart");
         String password = request.getParameter("pass");
 	
-		adminSignUp addTest = new adminSignUp(username, name, password);
+		adminSignUp addTest = new adminSignUp(username, name, department, password);
 		int addStatus1 = adminSignUp.add(addTest);
 		if(addStatus1==1) 
 		{

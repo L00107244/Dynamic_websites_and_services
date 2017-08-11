@@ -46,7 +46,7 @@ bg=green</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>SQL method implementation
-bg=orange
+bg=green
 fg=black</panel_attributes>
     <additional_attributes/>
   </element>
@@ -58,7 +58,9 @@ fg=black</panel_attributes>
       <w>180</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>web service implementation</panel_attributes>
+    <panel_attributes>web service implementation
+
+bg=orange</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

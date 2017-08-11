@@ -12,6 +12,7 @@ public class adminSignUp
   private static int id;
   private static String username;
   private static String name;
+  private static String Department;
   private static String password;
   
   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -23,17 +24,19 @@ public class adminSignUp
   static final String pass ="password";
   public static adminSignUp ConnectedAdmin;
   
-  public adminSignUp(String user, String namein, String pass)
+  public adminSignUp(String user, String namein, String Depart, String pass)
   {
 	  this.username = user;
 	  this.name = namein;
+	  this.Department = Depart;
 	  this.password = pass;
   }
-  public adminSignUp(int idin, String userin, String Name, String pass)
+  public adminSignUp(int idin, String userin, String Name, String Depart, String pass)
   {
 	 this.id = idin;
 	 this.username = userin;
 	 this.name = name;
+	 this.Department = Depart;
 	 this.password = pass;
   }
   public adminSignUp()
@@ -47,6 +50,10 @@ public class adminSignUp
   private void SetName(String namein)
   {
 	  this.name = namein;
+  }
+  private void SetDepartment(String DepartIn)
+  {
+	  this.Department = DepartIn;
   }
   private void SetPassword(String passIn)
   {
@@ -64,6 +71,10 @@ public class adminSignUp
   {
 	  return name;
   }
+  public String getDepartment()
+  {
+	  return Department;
+  }
   public String getPassword()
   {
 	  return password;
@@ -72,8 +83,9 @@ public class adminSignUp
   {
 	  int status = 0;
 	  
-	  String sqlString ="insert into admin( username, name,password) values(\'"+signin.getUsername()+ 
+	  String sqlString ="insert into admin( username, name, Department,password) values(\'"+signin.getUsername()+ 
 				"\', \'"+signin.getName()+ 
+				"\', \'"+signin.getDepartment()+
 				"\', \'"+signin.getPassword()+"\')";
 	  status = databaseUpdate(sqlString);
 	  System.out.print(sqlString);  
@@ -94,6 +106,7 @@ public class adminSignUp
 					               
 							              resultSet.getString("username"),
 							              resultSet.getString("name"),
+							              resultSet.getString("Department"),
 							              resultSet.getString("password"));
 							     
 			  AllAdmins.add(nextadmin);
@@ -132,29 +145,7 @@ public static int databaseUpdate(String sqlUpdate)
 		}
 		return status;
   }
-  public static void main(String []args)
-  {
-	
-    Scanner keyIn = new Scanner(System.in);
 
-	
-	System.out.println("Userername: ");
-	String user=keyIn.nextLine();
-	System.out.println("Password: ");
-	String pass=keyIn.nextLine();
-	ArrayList<adminSignUp> ars= new ArrayList<adminSignUp>();
-	ars=adminSignUp.viewAllAdmins();
-	for(adminSignUp s:ars){
-		if(user.equals(s.getUsername())&& pass.equals(s.getPassword()))
-	    {
-			
-			adminSignUp.ConnectedAdmin=s;
-	    	System.out.println("connected");
-
-	    }
-
-	}
-  }
   
 
   }

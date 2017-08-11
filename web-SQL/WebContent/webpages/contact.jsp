@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="java_classes.AdminContact" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -36,21 +37,46 @@
 </div>
 <div class= login>
 <div id= heading>
-<h2>Contact</h2>
-<p>Contact a seller by filling in the enquiry below</p>
-<select>
-  <option value="select">Department</option>
-  <option value="sales">Sales</option>
-  <option value="customer-services">Customer Service</option>
-  <option value="tech-support">Tech support</option>
-</select>
-<form action="/action_page.php">
- <input type="text" name="search1" value="Message">
-<input type="submit" value="send">
+<h2>Contact Us</h2>
+<p>Please fill out the details in regards to your inquiry</p>
+        <form method="post" action="" name="form2" id="my_sign-up_form">
+          <ol>
+             <li>
+              <select name="DepartmentOption1">
+                <option value="select">Department</option>
+                <option value="Sales">Sales</option>
+                <option value="Customer Service">Customer Service</option>
+                <option value="Tech Support">Tech support</option>
+               </select>
+            </li>
+             <li>
+              <label for="message">Message</label>
+              <input type="text" name="message">
+            </li>
+            <li>
+              <input class="submit" type="submit" name="send" value="submit">
+            </li>
+          </ol>   
+          <%
+          if(request.getParameter("send")!= null)
+          {
+        	  String Department = request.getParameter("DepartmentOption1");
+        	  String message = request.getParameter("message");
+        	  
+        	  AdminContact adminC = new AdminContact(Department, message);
+        	  int status = AdminContact.add(adminC);
+        	  if(status == 1)
+        	  {
+        		  System.out.println("Message Sent");
+        	  }
+        	  else
+        		  System.out.println("eror");
+        	  
+          }
+          %>      
+		 </form>
+		</div>
 </div>
-
-</div>
-
 <div class = footer>
 <div id= contact>
 <h5> Contact</h5>

@@ -39,7 +39,7 @@
 <div id= top_cat1>
 <img  src= "Sample_photos/menu_options/1235.jpg" width="100%" height="300">
 <div id= link1>
-<a href='to_buy.jsp'><span>click to browse Messages</span></a>
+<a href='adminMessages.jsp'><span>click to browse Messages</span></a>
 </div>
 
 </div>

@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="java_classes.adminSignUp" %>
+<%@ page import="java_classes.AdminContact" %>
+<%@ page import="java.util.ArrayList" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -30,25 +33,29 @@
 </div>
 <div id= microphone_op>
 <form action="/action_page.php">
-  <input type="image" src="Sample_photos/buttons/microphone.jpg" width="30" height="30"alt="Speech_navigation">
+  <input type="image" src= "Sample_photos/buttons/microphone.jpg"width="30" height="30"alt="Speech_navigation">
 </form>
 </div>
 </div>
 <div class= login>
 <div id= heading>
-<h2>Contact</h2>
-<p>If you have any questions please to not hesitate to contact</p>
-<select>
-  <option value="select">Department</option>
-  <option value="sales">Sales</option>
-  <option value="customer-services">Customer Service</option>
-  <option value="tech-support">Tech support</option>
-</select>
-<form action="/action_page.php">
- <input type="text" name="search1" value="Message">
-<input type="submit" value="send">
-</div>
-
+<h2>Messages</h2>
+<p>These are customer messages please reply when you get the time</p>
+          
+   <%
+   	   adminSignUp admin = new adminSignUp();
+       String departmentName = admin.getDepartment();
+       System.out.println(departmentName);
+       ArrayList array = new ArrayList();
+       AdminContact adminc = new AdminContact();
+       array = adminc.getMessageByDepartment(departmentName);
+       System.out.println(array);
+       for(Object c: array)
+       {
+    	   out.println(c.toString());
+       }
+		%> 
+		</div>
 </div>
 
 <div class = footer>

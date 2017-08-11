@@ -12,7 +12,7 @@ import com.mysql.jdbc.Blob;
 import java_classes.sign_up_backend;
 public class Post_advert
 {
-  private int item_id;
+  private static int item_id;
   private String Name;
   private String condition;
   private String Description;
@@ -97,7 +97,7 @@ public class Post_advert
   {
 	  categories = catin;
   }
-  public int getID()
+  public static int getID()
   {
 	  return item_id;
   }
@@ -141,7 +141,7 @@ public class Post_advert
 	{
 
 			int status = 0;
-			String sqlString= "insert into sell( Name, condition,Description, Location, E_mail, phone_number, sellere_id, categories) values(\'"+pad.getName()+ 
+			String sqlString= "insert into sell(Name, condition, Description, Location, E_mail, phone_number, sellere_id, categories) values(\'"+pad.getName()+ 
 					"\', \'"+pad.getCondition()+ 
 					"\', \'"+pad.getDescription() + 
 					"\', \'"+pad.getLocation() +
