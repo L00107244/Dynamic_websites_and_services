@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page import="java_classes.Post_advert" %>
 <%@ page import="java_classes.sign_up_backend" %>
-<%@ page import="com.mysql.jdbc.Blob;" %>
+
 
 <html>
 <head>
@@ -58,8 +58,14 @@
               <input type="text" name="description">
             </li>
             <li>
-              <label for="location">Location</label>
-              <input type="text" name="locat">
+              <label for="location">location</label>
+              <select name="search_option2">
+              <option value="select">please select</option>
+              <option value="Ulster">Ulster</option>
+              <option value="Munster">Munster</option>
+              <option value="Leinster">Leinster</option>
+              <option value="Connacht">Connacht</option>
+              </select>
             </li>
             <li>
               <label for="email">E-mail</label>
@@ -69,9 +75,15 @@
               <label for="phone">Phone Number</label>
               <input type="text" name="phoneNumber">
             </li>
-             <li>
-              <label for="category">Category</label>
-              <input type="text" name="Category">
+            <li>
+            <label for="catergory">Category</label>
+             <select name="searchOption1">
+             <option value="select">please select</option>
+             <option value="House_Hold">House Hold</option>
+             <option value="Motor">Motor</option>
+             <option value="technology">technology</option>
+             <option value="Animals">Animals</option>
+             </select>
             </li>
             <li>
               <input class="submit" type="submit" name="Submit" value="Post">
@@ -91,17 +103,17 @@
 		String itemName = request.getParameter("itemName");  
 		String condition = request.getParameter("condition");
         String description = request.getParameter("description");
-        String location = request.getParameter("locat");
-		String email = request.getParameter("email");
+        String location = request.getParameter("search_option2" );
+        String email = request.getParameter("email");
 		String phone = request.getParameter("phoneNumber");
-		String category = request.getParameter("Category");
+		String cate = request.getParameter("searchOption1" );
 		int idin = signin.getid();
 		pa.setSellerid(idin);
 		System.out.println(idin);
 		int sellid = pa.getSellerid();
 		
 	
-		Post_advert addadvert = new Post_advert(itemName, condition, description, location, email, phone, sellid, category);
+		Post_advert addadvert = new Post_advert(itemName, condition, description, location, email, phone, sellid, cate);
 		int addStatus1 = Post_advert.add(addadvert);
 		if(addStatus1==1) 
 		{

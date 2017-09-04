@@ -139,16 +139,16 @@ public class Post_advert
   }
 	public static int add(Post_advert pad)
 	{
-
+		//"insert into admin( username, name, Department,password) values(\'"
 			int status = 0;
-			String sqlString= "insert into sell(Name, condition, Description, Location, E_mail, phone_number, sellere_id, categories) values(\'"+pad.getName()+ 
+			String sqlString= "insert into sell(Name, condition, Description, Location, Email, phoneNumber, sellerID, categories) values(\'"+pad.getName()+ 
 					"\', \'"+pad.getCondition()+ 
 					"\', \'"+pad.getDescription() + 
 					"\', \'"+pad.getLocation() +
 					"\', \'"+pad.getEmail() +
 					"\', \'"+pad.getPhoneNumber() +
-					"\', \'"+pad.getCate() +
-					"\', \'"+ pad.getSellerid()+"\')";
+					"\', \'"+ pad.getSellerid()+
+					"\', \'"+pad.getCate() +"\')";
 			status = databaseUpdate(sqlString);
 			System.out.print(sqlString);  
 			return status;

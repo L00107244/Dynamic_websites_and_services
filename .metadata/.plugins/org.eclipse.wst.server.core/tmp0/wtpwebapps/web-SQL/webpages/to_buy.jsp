@@ -83,7 +83,7 @@
   			for(final Object p:array){
 				out.println(p.toString());
 				%>
-				<a href ="MessageSeller.jsp">Contact Seller</a>
+				<a href ="MessageSeller.jsp">Contact Seller</a><br>
 				<%
 
 			}

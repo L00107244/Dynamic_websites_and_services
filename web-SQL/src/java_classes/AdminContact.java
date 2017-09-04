@@ -77,7 +77,7 @@ public class AdminContact
         resultSet=statement.executeQuery("SELECT * FROM `contact_admin` WHERE Department ='"+Departin+"'");
         
         while ( resultSet.next() )      {
-            ac = new AdminContact( resultSet.getInt("mess_id"),
+            ac = new AdminContact( resultSet.getInt("ID"),
           		            resultSet.getString("Department"),   
            		    	    resultSet.getString("message")); 
            		arr.add(ac);    	                  

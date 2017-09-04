@@ -40,7 +40,7 @@
 <div class= login>
 <div id= heading>
 <h2>Messages</h2>
-<p>These are customer messages please reply when you get the time</p>
+<p>These are admin messages please reply when you get the time</p>
           
    <%
    	   adminSignUp admin = new adminSignUp();

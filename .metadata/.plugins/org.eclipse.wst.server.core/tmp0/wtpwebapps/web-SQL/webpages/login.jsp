@@ -67,8 +67,7 @@
         	 sign_up_backend signin = new sign_up_backend();
         	 ArrayList<sign_up_backend> sub = new ArrayList<sign_up_backend>();
         	 sub = sign_up_backend.viewAllUsers();
-       
-        		 if(username.equals(adminlog.getUsername())&& password.equals(adminlog.getPassword()))
+              if(username.equals(adminlog.getUsername())&& password.equals(adminlog.getPassword()))
         		 {
         			 adminSignUp.ConnectedAdmin=adminlog;
         			 response.sendRedirect("adminPage.jsp");

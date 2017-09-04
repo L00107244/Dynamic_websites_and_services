@@ -49,6 +49,14 @@
               <label for="aname">Name</label>
               <input type="text" name="name">
             </li>
+              <li>
+              <select name="DepartmentOption1">
+                <option value="select">Department</option>
+                <option value="Sales">Sales</option>
+                <option value="Customer Service">Customer Service</option>
+                <option value="Tech Support">Tech support</option>
+               </select>
+            </li>
              <li>
               <label for="password">Password</label>
               <input type="password" name="pass">
@@ -65,9 +73,10 @@
 
 		String username = request.getParameter("un");
 		String name = request.getParameter("name");
+		String Department = request.getParameter("DepartmentOption1");
         String password = request.getParameter("pass");
 	
-		adminSignUp addTest = new adminSignUp(username, name, password);
+		adminSignUp addTest = new adminSignUp(username, name, Department, password);
 		int addStatus1 = adminSignUp.add(addTest);
 		if(addStatus1==1) 
 		{
