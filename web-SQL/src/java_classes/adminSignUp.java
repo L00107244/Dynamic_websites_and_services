@@ -22,16 +22,16 @@ public class adminSignUp
   
   static final String User = "root";
   static final String pass ="password";
-  public static adminSignUp ConnectedAdmin;
+  private static adminSignUp ConnectedAdmin;
   
-  public adminSignUp(String user, String namein, String Depart, String pass)
+  protected adminSignUp(String user, String namein, String Depart, String pass)
   {
 	  this.username = user;
 	  this.name = namein;
 	  this.Department = Depart;
 	  this.password = pass;
   }
-  public adminSignUp(int idin, String userin, String Name, String Depart, String pass)
+  protected adminSignUp(int idin, String userin, String Name, String Depart, String pass)
   {
 	 this.id = idin;
 	 this.username = userin;
@@ -39,7 +39,7 @@ public class adminSignUp
 	 this.Department = Depart;
 	 this.password = pass;
   }
-  public adminSignUp()
+  protected adminSignUp()
   {
 	  
   }
@@ -59,11 +59,11 @@ public class adminSignUp
   {
 	  this.password = passIn;
   }
-  public int getID()
+  protected int getID()
   {
 	  return id;
   }
-  public String getUsername()
+  protected String getUsername()
   {
 	  return username;
   }
@@ -71,15 +71,15 @@ public class adminSignUp
   {
 	  return name;
   }
-  public String getDepartment()
+  protected String getDepartment()
   {
 	  return Department;
   }
-  public String getPassword()
+  protected String getPassword()
   {
 	  return password;
   }
-  public static int add(adminSignUp signin)
+  protected static int add(adminSignUp signin)
   {
 	  int status = 0;
 	  
@@ -91,7 +91,7 @@ public class adminSignUp
 	  System.out.print(sqlString);  
 	  return status;
   }
-  public static ArrayList<adminSignUp> viewAllAdmins()
+  protected static ArrayList<adminSignUp> viewAllAdmins()
   {
 	  ArrayList<adminSignUp> AllAdmins = new ArrayList<adminSignUp>();
 	  try{
@@ -119,7 +119,7 @@ public class adminSignUp
 	  }
 	   return AllAdmins; 
 	}
-  public int updateAdmin(int IDNoIn, String usernamein, String passwordin)   
+  protected int updateAdmin(int IDNoIn, String usernamein, String passwordin)   
   {
       int status = 0;
       String sqlString="update admin set username=\'"+usernamein+"',password = '"+passwordin+"\' where id="+IDNoIn;
@@ -128,7 +128,7 @@ public class adminSignUp
 
     
    }
-public static int databaseUpdate(String sqlUpdate)
+  protected static int databaseUpdate(String sqlUpdate)
   {
 		int status = 0;
 

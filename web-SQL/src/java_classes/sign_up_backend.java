@@ -15,7 +15,7 @@ public class sign_up_backend
 	private static String password;
 	private static String email;
 	private static String phoneNumber;
-	 // JDBC driver name and database URL
+	// JDBC driver name and database URL
 	 static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
 	 static final String DB_URL = "jdbc:mysql://localhost/buy-sell-repeat";
 	 private static Statement statement = null;
@@ -50,55 +50,55 @@ public class sign_up_backend
 	 {
 		 
 	 }
-	 public static void setFirstName(String fnIn)
+	 protected static void setFirstName(String fnIn)
 	 {
 		 first_name = fnIn;
 	 }
-	 public static void setSurname(String snIn)
+	 protected static void setSurname(String snIn)
 	 {
 		 surname = snIn;
 	 }
-	 public static void setusername(String userIn)
+	 protected static void setusername(String userIn)
 	 {
 		 username = userIn;
 	 }
-	 public static void setpassword(String passIn)
+	 protected static void setpassword(String passIn)
 	 {
 		 password = passIn;
 	 }
-	 public static void setEmail(String emIn)
+	 protected static void setEmail(String emIn)
 	 {
 		 email = emIn;
 	 }
-	 public static void setPhoneNumber(String phoneIn)
+	 protected static void setPhoneNumber(String phoneIn)
 	 {
 		 phoneNumber = phoneIn;
 	 }
-	 public int getid()
+	 protected int getid()
 	 {
 		 return id;
 	 }
-	 public String getFirstName()
+	 protected String getFirstName()
 	 {
 		 return first_name;
 	 }
-	 public String getSurname()
+	 protected String getSurname()
 	 {
 		 return surname;
 	 }
-	 public String getusername()
+	 protected String getusername()
 	 {
 		 return username;
 	 }
-	 public String getpassword()
+	 protected String getpassword()
 	 {
 		 return password;
 	 }
-	 public String getEmail()
+	 protected String getEmail()
 	 {
 		 return email;
 	 }
-	 public String getPhoneNumber()
+	 protected String getPhoneNumber()
 	 {
 		 return phoneNumber;
 	 }
@@ -118,7 +118,7 @@ public class sign_up_backend
 			System.out.print(sqlString);  
 			return status;
 		}
-	  public static ArrayList<sign_up_backend> viewAllUsers()
+	  protected static ArrayList<sign_up_backend> viewAllUsers()
 	  {
 		  ArrayList<sign_up_backend> AllAdmins = new ArrayList<sign_up_backend>();
 		  try{
@@ -147,7 +147,7 @@ public class sign_up_backend
 		  }
 		   return AllAdmins; 
 		}
-	    public int updateRecord(int IDNoIn, String usernamein, String passwordin, String emailin, String PhoneNumin)   
+	    protected int updateRecord(int IDNoIn, String usernamein, String passwordin, String emailin, String PhoneNumin)   
 	    {
 	        int status = 0;
 	        String sqlString="update signup set username=\'"+usernamein+"',password = '"+passwordin+"',email = '"+emailin+
@@ -156,7 +156,7 @@ public class sign_up_backend
 	        return status;
 	      
 	     }
-	public  static int databaseUpdate(String sqlUpdate)
+	protected  static int databaseUpdate(String sqlUpdate)
 	{
 		int status = 0;
 

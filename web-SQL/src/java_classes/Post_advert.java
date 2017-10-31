@@ -22,6 +22,7 @@ public class Post_advert
   private String images;
   private int seller_id;
   private String categories;
+  private double price;
   
 	 // JDBC driver name and database URL
 	 static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
@@ -34,7 +35,7 @@ public class Post_advert
 	 static final String USER = "root";
 	 static final String PASS = "password";
   
-  public Post_advert(String namein, String condin, String Descrip, String locat, String em, String pn, int sid, String cat)
+  protected Post_advert(String namein, String condin, String Descrip, String locat, String em, String pn, int sid, String cat, double Price)
   {
 	this.Name = namein;
 	this.condition = condin;
@@ -44,8 +45,9 @@ public class Post_advert
 	this.phone_number = pn;
 	this.seller_id = sid;
 	this.categories = cat;
+	this.price = Price;
   }
-  public Post_advert( int id,String namein, String condin, String Descrip, String locat, String em, String pn, int sid, String cate)
+  protected Post_advert( int id,String namein, String condin, String Descrip, String locat, String em, String pn, int sid, String cate, double Price)
   {
 	this.item_id = id;
 	this.Name = namein;
@@ -56,8 +58,9 @@ public class Post_advert
 	this.phone_number = pn;
 	this.seller_id = sid;
 	this.categories = cate;
+	this.price = Price;
   }
-  public Post_advert()
+  protected Post_advert()
   {
 	  
   }
@@ -93,67 +96,76 @@ public class Post_advert
   {
 	  seller_id = idin;
   }
-  public void setCategories(String catin)
+  protected void setCategories(String catin)
   {
 	  categories = catin;
   }
-  public static int getID()
+  protected void setPrice(double pricein)
+  {
+	  price = pricein;
+  }
+  protected static int getID()
   {
 	  return item_id;
   }
-  public String getName()
+  protected String getName()
   {
 	  return Name;
   }
-  public String getCondition()
+  protected String getCondition()
   {
 	  return condition;
   }
-  public String getDescription()
+  protected String getDescription()
   {
 	  return Description;
   }
-  public String getLocation()
+  protected String getLocation()
   {
 	  return Location;
   }
-  public String getEmail()
+  protected String getEmail()
   {
 	  return E_mail;
   }
-  public String getPhoneNumber()
+  protected String getPhoneNumber()
   {
 	  return phone_number;
   }
-  public String getImages()
+  protected String getImages()
   {
 	  return images;
   }
-  public int getSellerid()
+  protected int getSellerid()
   {
 	  return seller_id;
   }
-  public String getCate()
+  protected String getCate()
   {
 	  return categories;
   }
-	public static int add(Post_advert pad)
+  protected double getPrice()
+  {
+	  return price;
+  }
+	protected static int add(Post_advert pad)
 	{
 		//"insert into admin( username, name, Department,password) values(\'"
 			int status = 0;
-			String sqlString= "insert into sell(Name, condition, Description, Location, Email, phoneNumber, sellerID, categories) values(\'"+pad.getName()+ 
+			String sqlString= "insert into sell(Name, condition, Description, Location, Email, phoneNumber, sellerID, categories, price) values(\'"+pad.getName()+ 
 					"\', \'"+pad.getCondition()+ 
 					"\', \'"+pad.getDescription() + 
 					"\', \'"+pad.getLocation() +
 					"\', \'"+pad.getEmail() +
 					"\', \'"+pad.getPhoneNumber() +
 					"\', \'"+ pad.getSellerid()+
-					"\', \'"+pad.getCate() +"\')";
+					"\', \'"+pad.getCate()+
+					"\', \'"+pad.getPrice()+"\')";
 			status = databaseUpdate(sqlString);
 			System.out.print(sqlString);  
 			return status;
 		}
-	public static Post_advert getAdvertsByID(int idin)
+	protected static Post_advert getAdvertsByID(int idin)
 	{
 	  Post_advert pa = new Post_advert();
 	  try
@@ -172,7 +184,8 @@ public class Post_advert
              		    	    resultSet.getString("E_mail"),
              		    	    resultSet.getString("phone_number"),
              		    	    resultSet.getInt("sellere_id"),
-             		    	    resultSet.getString("categories")); 
+             		    	    resultSet.getString("categories"),
+             		    	    resultSet.getDouble("price")); 
              		    	                  
            }   
            conn.close();
@@ -183,7 +196,7 @@ public class Post_advert
        return pa;
 		
 	}
-	public static ArrayList<Post_advert>SearchByWords(String name, String tech, String Locat)
+	protected static ArrayList<Post_advert>SearchByWords(String name, String tech, String Locat)
 	{
 	  Post_advert pa = new Post_advert();
 	  ArrayList<Post_advert> arr = new ArrayList<Post_advert>();
@@ -203,7 +216,8 @@ public class Post_advert
              		    	    resultSet.getString("E_mail"),
              		    	    resultSet.getString("phone_number"),
              		    	    resultSet.getInt("sellere_id"),
-             		    	    resultSet.getString("categories")); 
+             		    	    resultSet.getString("categories"),
+             		    	    resultSet.getDouble("price")); 
                                 
               arr.add(pa);
              		    	                  
@@ -216,7 +230,7 @@ public class Post_advert
        return arr;
 		
 	}
-    public static int delete(int itemidIn) 
+    protected static int delete(int itemidIn) 
     {
         int status=0;  
         String sqlString= "delete from sell where item_id=" + itemidIn;     
@@ -231,7 +245,7 @@ public class Post_advert
         }
         return status;
      }
-	public  static int databaseUpdate(String sqlUpdate)
+	protected  static int databaseUpdate(String sqlUpdate)
 	{
 		int status = 0;
 

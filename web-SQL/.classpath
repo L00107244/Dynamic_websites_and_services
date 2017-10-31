@@ -10,5 +10,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Users/User1/Downloads/servlet-api-2.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/User1/Downloads/mysql-connector-java-5.1.38.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User1/Desktop/sphinx 4/sphinx4-core-1.0.0 (2).jar"/>
+	<classpathentry kind="lib" path="C:/Users/User1/Desktop/sphinx 4/sphinx4-data-1.0.0 (1).jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

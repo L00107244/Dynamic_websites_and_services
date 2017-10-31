@@ -20,42 +20,42 @@ public class AdminContact
   static final String User = "root";
   static final String pass ="password";
   
-  public AdminContact(int idin, String departin, String mess)
+  protected AdminContact(int idin, String departin, String mess)
   {
 	  this.id = idin;
 	  this.Department = departin;
 	  this.message = mess;
   }
-  public AdminContact(String department, String message)
+  protected AdminContact(String department, String message)
   {
 	  this.Department = department;
 	  this.message = message;
   }
-  public AdminContact()
+  protected AdminContact()
   {
 	  
   }
-  public void setDepartment(String departin)
+  protected void setDepartment(String departin)
   {
 	  this.Department = departin;
   }
-  public void setMessage(String messageIn)
+  protected void setMessage(String messageIn)
   {
 	  this.message = messageIn;
   }
-  public int getID()
+  protected int getID()
   {
 	  return id;
   }
-  public String getDepartment()
+  protected String getDepartment()
   {
 	  return Department;
   }
-  public String getMessage()
+  protected String getMessage()
   {
 	  return message;
   }
-  public static int add(AdminContact newMessage)
+  protected static int add(AdminContact newMessage)
   {
 	  int addStatus = 0;
 	  
@@ -65,7 +65,7 @@ public class AdminContact
 	  addStatus = databaseUpdate(sql);
 	  return addStatus;
   }
-	public static ArrayList<AdminContact>getMessageByDepartment(String Departin)
+	protected static ArrayList<AdminContact>getMessageByDepartment(String Departin)
 	{
 	  AdminContact ac = new AdminContact();
 	  ArrayList<AdminContact> arr = new ArrayList<AdminContact>();
@@ -90,7 +90,7 @@ public class AdminContact
      return arr;
 		
 	}
-  public static int databaseUpdate(String sqlUpdate)
+  protected static int databaseUpdate(String sqlUpdate)
   {
 		int status = 0;
 

@@ -2,6 +2,7 @@
     <wb-module deploy-name="web-SQL">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/lib"/>
         <property name="java-output-path" value="/web-SQL/build/classes"/>
         <property name="context-root" value="web-SQL"/>
     </wb-module>

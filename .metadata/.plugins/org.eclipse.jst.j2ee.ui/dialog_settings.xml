@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="false" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="false" key="J2EE_EXPORT_SOURCE"/>
 	<list key="MRU_RUNTIME_STORE">
 		<item value="NULL_RUNTIME"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\Users\User1\eclipse-ee\eclipse\tom-cat\webapps\web-SQL.war"/>
+		<item value="C:\Users\User1\eclipse-ee\eclipse\tom-cat\webapps\UserManagement.war"/>
+		<item value="C:\Users\User1\Desktop\UserManagement.war"/>
 	</list>
 </section>

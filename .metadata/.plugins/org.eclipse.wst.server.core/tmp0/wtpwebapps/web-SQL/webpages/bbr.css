@@ -21,6 +21,12 @@
 	font-size: 30px;
     white-space: nowrap;
 }
+#converter{
+	float: right;
+	position: relative;
+	margin-left: 60%;
+	border-style: solid;
+}
 #microphone_op{
 	float: right;
 	height: 50px;
